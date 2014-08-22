@@ -1,0 +1,17 @@
+---
+# Main installation of all server
+
+- name: ensure packages list is at the latest version
+  apt: update_cache=yes
+
+
+- name: Instal admin package
+  apt: name={{ item }} state=installed
+  with_items:
+    - htop
+    - tree
+    - git
+    - tig
+    - tmux
+    - mosh
+    - vim-nox
